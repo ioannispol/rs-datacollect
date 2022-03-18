@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rs-datacollect.dir/main.cpp.o"
-  "rs-datacollect.pdb"
   "rs-datacollect"
+  "rs-datacollect.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

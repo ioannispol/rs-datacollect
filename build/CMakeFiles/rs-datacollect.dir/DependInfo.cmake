@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/nano/Dev/rs-datacollect/main.cpp" "/home/nano/Dev/rs-datacollect/build/CMakeFiles/rs-datacollect.dir/main.cpp.o"
+  "/home/ioannis/Dev/rs-datacollect/main.cpp" "/home/ioannis/Dev/rs-datacollect/build/CMakeFiles/rs-datacollect.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

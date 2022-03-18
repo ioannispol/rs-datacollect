@@ -6,15 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/nano/Dev/rs-datacollect/main.cpp
+/home/ioannis/Dev/rs-datacollect/cv-helpers.hpp
+librealsense2/rs.hpp
+-
 opencv2/opencv.hpp
 -
-iostream
+exception
 -
 
-/usr/local/include/opencv4/opencv2/./imgproc/segmentation.hpp
-opencv2/imgproc.hpp
-/usr/local/include/opencv4/opencv2/./imgproc/opencv2/imgproc.hpp
+/home/ioannis/Dev/rs-datacollect/main.cpp
+iostream
+-
+opencv2/opencv.hpp
+-
+librealsense2/rs.h
+-
+cv-helpers.hpp
+/home/ioannis/Dev/rs-datacollect/cv-helpers.hpp
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
@@ -834,7 +842,11 @@ opencv2/core.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
 ./imgproc/segmentation.hpp
-/usr/local/include/opencv4/opencv2/./imgproc/segmentation.hpp
+/usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
+
+/usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
+opencv2/imgproc.hpp
+/usr/local/include/opencv4/opencv2/imgproc/opencv2/imgproc.hpp
 
 /usr/local/include/opencv4/opencv2/ml.hpp
 opencv2/core.hpp

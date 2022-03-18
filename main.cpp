@@ -1,35 +1,43 @@
-#include <opencv2/opencv.hpp>
 #include <iostream>
+#include <opencv2/opencv.hpp>
+#include <librealsense2/rs.h>
 
-int main ()
+#include "cv-helpers.hpp"
+
+const size_t windwoWidth = 848;
+const size_t windowHeight = 800;
+
+
+
+using namespace cv;
+using namespace rs2;
+
+int main()
 {
-  cv::Mat Frame; //Declare the matrix for the video frame
-  cv::namedWindow("Video Capture");
+	rs2::config cfg;
+	pipeline pipe;
 
-  cv::VideoCapture capture(0);
+	cfg.enable_stream(RS2_STREAM_POSE, 848, 800, RS2_FORMAT_Y8, 30);
+	auto config = pipe.start(cfg);
+	rs2::align align_to(RS2_STREAM_POSE);
 
-  if (!capture.isOpened())
-  {
-    std::cout << "No Video stream available" << std::endl;
-    std::system("pause");
-  
-    return -1;
-  }
+	namedWindow("RS-OpenCV-Test", WINDOW_AUTOSIZE);
+	
+	while (true)
+	{
+		auto data = pipe.wait_for_frames();
+		data = align_to.process(data);
 
-  while (true)
-  {
-    capture >> Frame;
+		auto ir_frame = data.get_infrared_frame();
 
-    if (Frame.empty())
-      break;
+		Mat ir_mat;
+		ir_mat = frame_to_mat(ir_frame);
 
-    cv::imshow("Video Capture", Frame);
-    char c = (char) cv::waitKey(25);
+		imshow("RS-OpenCV-Test", ir_mat);
 
-    if (c == 27)
-      break;
-  }
+		if (waitKey(1) >= 0)
+			break;
+	}
 
-  capture.release();
-  return 0;
+	return 0;
 }

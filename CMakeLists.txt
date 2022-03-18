@@ -6,13 +6,12 @@ enable_testing()
 
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
-set(DEPENDENCIES  ${OpenCV_LIBS})
+set(DEPENDENCIES realsense2 ${OpenCV_LIBS})
 
 message( STATUS "OPENCV VERSION: ${OpenCV_VERSION}")
 
-add_executable(rs-datacollect main.cpp)
+add_executable(rs-datacollect main.cpp cv-helpers.hpp)
 target_link_libraries(rs-datacollect ${DEPENDENCIES})
-
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
